@@ -9,23 +9,35 @@ import SwiftUI
 import test_ondoc_spm
 
 struct ContentView: View {
+    @State var schedule = [Schedule]()
+    
     var body: some View {
-        let scheduleData = ScheduleData()
-        let doctor = scheduleData.fetchDoctorAndSchedule()
         HStack {
             Image(systemName: "stethoscope")
-            Text("\(doctor.name) - Schedule")
+            Text("Doctor iBolit - Schedule")
         }
         List {
-            let schedule = doctor.schedule
             ForEach(schedule, id: \.id) { item in
-                HStack { 
+                HStack {
                     Text(item.startDate.getFormattedDate(format: "HH:mm"))
                     Text("-")
                     Text(item.endDate.getFormattedDate(format: "HH:mm"))
                 }
             }
+            Section {
+                Button(action: optimizeSchedule) {
+                    Text("Optimize schedule!")
+                }
+            }
+        }.onAppear {
+            let scheduleData = ScheduleData()
+            schedule = scheduleData.fetchDoctorsSchedule()
         }
+    }
+    
+    private func optimizeSchedule() {
+        // Implementation here
+        // schedule =
     }
 }
 
