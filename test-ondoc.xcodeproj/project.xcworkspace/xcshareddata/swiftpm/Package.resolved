@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "test-ondoc-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/romacv/test-ondoc-spm",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a5305d73d61f25c53ec1d8df60bfa63cdf840ed3"
+      }
+    }
+  ],
+  "version" : 2
+}
