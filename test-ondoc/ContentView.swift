@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import test_ondoc_spm
 
 struct ContentView: View {
     @State var schedule = [Schedule]()
